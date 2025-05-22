@@ -26,3 +26,6 @@ yarn-error.log*
 .prettierrc
 commitlint.config.js
 .husky
+
+# environment variables
+.env

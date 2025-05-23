@@ -34,16 +34,6 @@ const Splash = () => {
 
   return (
     <Box className={styles.splashContainer}>
-      <video
-        ref={videoRef}
-        className={styles.videoBackground}
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="/videos/splash-background-video.mp4" type="video/mp4" />
-      </video>
       <Box className={styles.contentOverlay}>
         <Typography
           variant="h2"

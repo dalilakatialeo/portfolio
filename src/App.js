@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Splash from './Pages/Splash/Splash';
+import About from './Pages/About/About';
+import Projects from './Pages/Projects/Projects';
+import Resume from './Pages/Resume/Resume';
 
 function App() {
+  const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 }); // Start mouse position at (0, 0)
+  const handleMouseMove = (e) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App" onMouseMove={handleMouseMove}>
+        <Routes>
+          <Route path="/" element={<Splash mousePosition={mousePosition} />} />
+          <Route
+            path="/about"
+            element={<About mousePosition={mousePosition} />}
+          />
+          <Route
+            path="/portfolio"
+            element={<Projects mousePosition={mousePosition} />}
+          />
+          <Route
+            path="/resume"
+            element={<Resume mousePosition={mousePosition} />}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

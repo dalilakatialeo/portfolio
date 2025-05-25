@@ -1,0 +1,20 @@
+@import '../../styles/colors.module.scss';
+
+.footer {
+  position: fixed; /* Sticks the footer to the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 30px; /* Very thin footer */
+  // background-color: $dark; /* Background color */
+  color: $dark; /* Text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-small !important; /* Small text */
+  z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.footerText {
+  text-align: center;
+}

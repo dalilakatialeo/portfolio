@@ -8,19 +8,14 @@ import Resume from './Pages/Resume/Resume';
 import Splash from './Components/Splash/Splash';
 
 function App() {
-  const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 }); // Start mouse position at (0, 0)
   const [showSplash, setShowSplash] = useState(true);
-
-  const handleMouseMove = (e) => {
-    setMousePosition({ x: e.clientX, y: e.clientY });
-  };
 
   const handleSplashComplete = () => {
     setShowSplash(false);
   };
 
   return (
-    <div className="App" onMouseMove={handleMouseMove}>
+    <div className="App">
       {showSplash ? (
         <Splash
           title="Dalila Katia Leo"
@@ -31,19 +26,10 @@ function App() {
       ) : (
         <Router>
           <Routes>
-            <Route path="/" element={<Home mousePosition={mousePosition} />} />
-            <Route
-              path="/about"
-              element={<About mousePosition={mousePosition} />}
-            />
-            <Route
-              path="/portfolio"
-              element={<Projects mousePosition={mousePosition} />}
-            />
-            <Route
-              path="/resume"
-              element={<Resume mousePosition={mousePosition} />}
-            />
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
         </Router>
       )}

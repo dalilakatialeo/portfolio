@@ -29,7 +29,7 @@ const MobileNav = () => {
       >
         {navLinks.map((link, index) => (
           <MenuItem key={index} onClick={handleMenuClose}>
-            <Link to={link.path} className={styles.navLink}>
+            <Link to={link.path} className={styles.mobileNavLink}>
               {link.label}
             </Link>
           </MenuItem>

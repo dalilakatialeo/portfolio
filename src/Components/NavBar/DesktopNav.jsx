@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import { LinkedIn, GitHub, Email } from '@mui/icons-material'; // Import Material-UI icons
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.scss';
 import navLinks from './navLinks';
@@ -15,6 +16,27 @@ const DesktopNav = () => {
           </Typography>
         </Link>
       ))}
+      <Box className={styles.iconLinks}>
+        <a
+          href="https://www.linkedin.com/in/dalila-k-leo/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconLink}
+        >
+          <LinkedIn />
+        </a>
+        <a
+          href="https://github.com/dalilakatialeo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.iconLink}
+        >
+          <GitHub />
+        </a>
+        <a href="mailto:dalilakatialeo@gmail.com" className={styles.iconLink}>
+          <Email />
+        </a>
+      </Box>
     </Box>
   );
 };

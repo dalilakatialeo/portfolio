@@ -3,6 +3,7 @@ import { Box, IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.scss';
+import navLinks from './navLinks'; // Import the JSON object
 
 const MobileNav = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -15,6 +16,7 @@ const MobileNav = () => {
     setAnchorEl(null);
   };
 
+  // Render the mobile navigation menu - iterating over navLinks
   return (
     <Box className={styles.mobileNav}>
       <IconButton color="inherit" onClick={handleMenuOpen}>
@@ -25,26 +27,13 @@ const MobileNav = () => {
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
       >
-        <MenuItem onClick={handleMenuClose}>
-          <Link to="/" className={styles.navLink}>
-            HOME
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-          <Link to="/about" className={styles.navLink}>
-            ABOUT
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-          <Link to="/portfolio" className={styles.navLink}>
-            PROJECTS
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-          <Link to="/contact" className={styles.navLink}>
-            CONTACT
-          </Link>
-        </MenuItem>
+        {navLinks.map((link, index) => (
+          <MenuItem key={index} onClick={handleMenuClose}>
+            <Link to={link.path} className={styles.navLink}>
+              {link.label}
+            </Link>
+          </MenuItem>
+        ))}
       </Menu>
     </Box>
   );

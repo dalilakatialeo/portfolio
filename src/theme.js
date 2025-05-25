@@ -12,7 +12,7 @@ const theme = createTheme({
     },
     link: {
       fontFamily: "'Inter', 'Helvetica', 'Arial', sans-serif",
-      fontWeight: 300,
+      fontWeight: 400,
     },
   },
 });

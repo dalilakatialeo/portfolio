@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Box, Typography } from '@mui/material';
 import styles from './Splash.module.scss';
 
 const Splash = ({ title, subtitle, progressSpeed = 25, onComplete }) => {
   const [progress, setProgress] = useState(0);
 
-  // Progress bar logic
-  const startProgress = React.useCallback(() => {
+  const startProgress = useCallback(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          if (onComplete) onComplete();
           return 100;
         }
         return prev + 1;
@@ -19,12 +17,19 @@ const Splash = ({ title, subtitle, progressSpeed = 25, onComplete }) => {
     }, progressSpeed);
 
     return () => clearInterval(interval);
-  }, [progressSpeed, onComplete]);
+  }, [progressSpeed]);
 
   useEffect(() => {
     const cleanup = startProgress();
     return cleanup;
   }, [startProgress]);
+
+  // Progress reached 100, call onComplete if provided
+  useEffect(() => {
+    if (progress === 100 && onComplete) {
+      onComplete();
+    }
+  }, [progress, onComplete]);
 
   return (
     <Box className={styles.splashContainer}>

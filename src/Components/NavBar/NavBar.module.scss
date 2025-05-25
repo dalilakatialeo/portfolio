@@ -12,12 +12,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $light !important;
+  background-color: $dark !important;
   z-index: 1201;
   padding: 0 20px;
   box-shadow:
-    0px 2px 3px 0px $orange,
-    0px 1px 1px 0px $orange !important;
+    0px 2px 3px 0px $accent,
+    0px 1px 1px 0px $accent !important;
 }
 
 .desktopNav {
@@ -28,14 +28,31 @@
   width: 100%;
 }
 
+.iconLinks {
+  display: flex;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.iconLink {
+  color: $light;
+  font-size: 16px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
 .navLink {
   text-decoration: none;
   font-weight: 300;
   font-size: small;
-  color: $dark;
+  transition: color 0.3s ease;
+  color: $light;
   &:hover,
   &:active {
-    color: $orange !important;
+    color: $accent !important;
   }
 }
 
@@ -43,15 +60,25 @@
   display: none; // Hidden by default
 }
 
-.menuIcon {
+.mobileNavLink {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: medium;
   color: $dark;
-  font-size: 24px;
+  &:hover,
+  &:active {
+    color: $accent !important;
+  }
+}
+
+.menuIcon {
+  color: $light;
+  font-size: 30px;
 }
 
 @media (max-width: 768px) {
   .mobileNav {
     font-weight: 400;
-
     display: flex;
     align-items: center;
     justify-content: flex-end;

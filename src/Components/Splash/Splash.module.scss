@@ -21,27 +21,31 @@
 }
 
 .title {
+  color: $dark;
   font-size: 3rem;
   margin-bottom: 20px;
   font-family: 'Fascinate';
 }
 
 .subtitle {
+  color: $dark;
   margin-bottom: 40px;
+  font-weight: 200;
 }
 
 .progressContainer {
   position: relative;
   width: 50%;
-  height: 5px;
+  height: 10px;
   background-color: $dark;
   border-radius: 5px;
   overflow: hidden;
   margin-top: 20px;
+  border: 1px solid $dark;
 }
 
 .progressBar {
   height: 100%;
-  background-color: $orange;
+  background-color: $accent;
   transition: width 0.3s ease;
 }

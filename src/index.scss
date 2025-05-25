@@ -4,7 +4,6 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -14,13 +13,14 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('../public/images/CD9D08FE-E7D9-432A-8D46-6509DD3B2856.png');
+  // background-color: $light;
+  background-image: url('../public/images/background.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
 ::selection {
-  background-color: $orange;
-  color: $light;
+  background-color: $accent;
+  color: $dark;
 }

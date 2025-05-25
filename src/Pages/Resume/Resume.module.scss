@@ -1,0 +1,59 @@
+@import '../../styles/colors.module.scss';
+
+.resumeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $dark;
+  text-align: center;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.experienceItem {
+  padding-left: 1rem;
+}
+
+.company {
+  color: $dark;
+  display: inline; // or inline-block if needed
+  background-image: linear-gradient($accent, $accent);
+  background-position: 0 90%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.25em;
+}
+
+.dateLocation {
+  font-style: italic;
+  color: #666;
+}
+
+.description {
+  margin-top: 0.5rem;
+  font-size: medium;
+  white-space: pre-line;
+}
+
+.skills {
+  margin-top: 0.5rem;
+  color: #444;
+}

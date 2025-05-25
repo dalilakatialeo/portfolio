@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import styles from './Projects.module.scss';
 import NavBar from '../../Components/NavBar/NavBar';
+import Footer from '../../Components/Footer/Footer';
 
 const Projects = () => {
   return (
@@ -21,6 +22,7 @@ const Projects = () => {
         open-source projects, and learning about the latest trends in software
         development.
       </Typography>
+      <Footer />
     </Box>
   );
 };

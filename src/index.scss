@@ -1,0 +1,26 @@
+@import './styles/colors.module.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('../public/images/CD9D08FE-E7D9-432A-8D46-6509DD3B2856.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+::selection {
+  background-color: $orange;
+  color: $light;
+}

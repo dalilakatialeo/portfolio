@@ -1,0 +1,64 @@
+@import '../../styles/colors.module.scss';
+
+.toolbar {
+  width: 100%;
+  min-height: 64px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light !important;
+  z-index: 1201;
+  padding: 0 20px;
+  box-shadow:
+    0px 2px 3px 0px $orange,
+    0px 1px 1px 0px $orange !important;
+}
+
+.desktopNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.navLink {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: small;
+  color: $dark;
+  &:hover,
+  &:active {
+    color: $orange !important;
+  }
+}
+
+.mobileNav {
+  display: none; // Hidden by default
+}
+
+.menuIcon {
+  color: $dark;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .mobileNav {
+    font-weight: 400;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .desktopNav {
+    display: none; // Hidden on mobile
+  }
+}

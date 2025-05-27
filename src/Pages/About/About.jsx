@@ -6,7 +6,7 @@ import Footer from '../../Components/Footer/Footer';
 
 const About = () => {
   const [about, setAbout] = React.useState(null);
-  const [error, setError] = React.useState(null);
+  const [error] = React.useState(null);
 
   useEffect(() => {
     const cachedData = localStorage.getItem('linkedin-cache');

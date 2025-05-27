@@ -41,11 +41,11 @@ const handleProgressCompletion = (progress, onComplete) => {
 
 const Splash = ({ title, subtitle, onComplete }) => {
   const [progress, setProgress] = useState(0);
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
 
   useEffect(() => {
     fetchLinkedInData(setError, setProgress);
-  }, []);
+  }, [setError]);
 
   useEffect(() => {
     handleProgressCompletion(progress, onComplete);

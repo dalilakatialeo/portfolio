@@ -19,7 +19,10 @@ const Resume = () => {
     const parsedData = JSON.parse(cachedData)?.data || {};
     setExperiences(parsedData.experiences || []);
     setEducation(parsedData.educations || []);
-    // setSkills(parsedData.skills || []);
+  }, []);
+
+  useEffect(() => {
+    document.title = "Resume - Dalila Katia Leo's Portfolio";
   }, []);
 
   const handleTabChange = (event, newValue) => {

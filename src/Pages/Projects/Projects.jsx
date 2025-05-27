@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import styles from './Projects.module.scss';
 import NavBar from '../../Components/NavBar/NavBar';
 import Footer from '../../Components/Footer/Footer';
 
 const Projects = () => {
+  useEffect(() => {
+    document.title = "Projects - Dalila Katia Leo's Portfolio";
+  }, []);
   return (
     <Box className={styles.projectsContainer}>
       <NavBar />

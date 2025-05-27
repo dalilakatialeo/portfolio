@@ -14,6 +14,10 @@ const About = () => {
     setAbout(aboutData);
   }, []);
 
+  useEffect(() => {
+    document.title = "About - Dalila Katia Leo's Portfolio";
+  }, []);
+
   return (
     <Box className={styles.aboutContainer}>
       <NavBar />

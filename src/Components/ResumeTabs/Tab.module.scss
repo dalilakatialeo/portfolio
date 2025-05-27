@@ -1,39 +1,14 @@
 @import '../../styles/colors.module.scss';
 
-.resumeContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: $dark;
-  text-align: center;
-  padding: 20px;
-  margin-top: 70px;
-}
-
-.title {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  background-image: linear-gradient($accent, $accent);
-  background-position: 0 90%;
-  background-repeat: no-repeat;
-  background-size: 100% 0.5em;
-}
-
-.description {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  max-width: 800px;
-}
-
-.experienceList {
+.list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
+  max-width: 70vw;
 }
 
-.experienceItem {
+.item {
   padding-left: 1rem;
   background-color: rgba($light, 0.7); // 50% opacity
   border-radius: 20px;
@@ -50,7 +25,7 @@
 
 .dateLocation {
   font-style: italic;
-  color: $dark;
+  color: #555;
 }
 
 .description {

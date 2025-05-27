@@ -1,19 +1,25 @@
 @import '../../styles/colors.module.scss';
 
 .aboutContainer {
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center; // Center vertically
   color: $dark;
   text-align: center;
   padding: 20px;
+  margin-top: 0; // Remove margin-top to allow proper centering
+  height: 100vh; // Full viewport height to center vertically
+  overflow: hidden !important;
 }
 
 .title {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 40px !important;
+  background-image: linear-gradient($accent, $accent);
+  background-position: 0 90%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.5em;
 }
 
 .description {
@@ -21,4 +27,6 @@
   margin-bottom: 15px;
   line-height: 1.6;
   max-width: 800px;
+  background-color: rgba($light, 0.7); // 50% opacity
+  border-radius: 20px;
 }

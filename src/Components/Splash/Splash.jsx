@@ -1,35 +1,60 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import styles from './Splash.module.scss';
+import { fetchLinkedInProfile } from '../../utils/fetchLinkedin';
 
-const Splash = ({ title, subtitle, progressSpeed = 25, onComplete }) => {
+const fetchLinkedInData = async (setError, setProgress) => {
+  try {
+    // time the fecth call
+    const startTime = Date.now();
+    fetchLinkedInProfile();
+    const elapsedTime = Date.now() - startTime;
+
+    // progress bar shows for at least 2 seconds
+    const remainingTime = Math.max(2000 - elapsedTime, 0);
+
+    setTimeout(() => {
+      setProgress(100);
+    }, remainingTime);
+  } catch (err) {
+    console.error('Error fetching LinkedIn profile:', err);
+    setError('Failed to fetch LinkedIn profile data.');
+    setProgress(100);
+  }
+};
+
+// progress bar
+const startProgressBar = (setProgress) => {
+  const interval = setInterval(() => {
+    setProgress((prev) => Math.min(prev + 5, 100));
+  }, 200);
+
+  return () => clearInterval(interval);
+};
+
+// Function to handle progress completion
+const handleProgressCompletion = (progress, onComplete) => {
+  if (progress === 100 && onComplete) {
+    onComplete();
+  }
+};
+
+const Splash = ({ title, subtitle, onComplete }) => {
   const [progress, setProgress] = useState(0);
-
-  const startProgress = useCallback(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prev + 1;
-      });
-    }, progressSpeed);
-
-    return () => clearInterval(interval);
-  }, [progressSpeed]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const cleanup = startProgress();
-    return cleanup;
-  }, [startProgress]);
+    fetchLinkedInData(setError, setProgress);
+  }, []);
 
-  // Progress reached 100, call onComplete if provided
   useEffect(() => {
-    if (progress === 100 && onComplete) {
-      onComplete();
-    }
+    handleProgressCompletion(progress, onComplete);
   }, [progress, onComplete]);
+
+  useEffect(() => {
+    const cleanup = startProgressBar(setProgress);
+    return cleanup;
+  }, []);
 
   return (
     <Box className={styles.splashContainer}>

@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Box className={styles.footer}>
       <Typography variant="subtitle2" className={styles.footerText}>
-        © {new Date().getFullYear()} DKL - Made with 💚 and ☕️
+        © {new Date().getFullYear()} DKL - brought to you by ones and zeros 🤖
       </Typography>
     </Box>
   );

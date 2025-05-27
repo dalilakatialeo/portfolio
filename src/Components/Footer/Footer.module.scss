@@ -1,20 +1,21 @@
 @import '../../styles/colors.module.scss';
 
 .footer {
-  position: fixed; /* Sticks the footer to the bottom */
+  position: fixed; // sticky
   bottom: 0;
   left: 0;
-  width: 100%; /* Full width */
-  height: 30px; /* Very thin footer */
-  // background-color: $dark; /* Background color */
-  color: $dark; /* Text color */
+  width: 100%;
+  height: 30px;
+  color: $dark;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: xx-small !important; /* Small text */
-  z-index: 1000; /* Ensures it stays above other elements */
+  font-size: xx-small !important;
+  z-index: 1000;
+  background-color: $light;
 }
 
 .footerText {
   text-align: center;
+  font-size: x-small !important; /* Small text */
 }

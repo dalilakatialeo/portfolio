@@ -13,6 +13,10 @@
 .title {
   font-size: 3rem;
   margin-bottom: 20px;
+  background-image: linear-gradient($accent, $accent);
+  background-position: 0 90%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.5em;
 }
 
 .description {
@@ -31,11 +35,13 @@
 
 .experienceItem {
   padding-left: 1rem;
+  background-color: rgba($light, 0.7); // 50% opacity
+  border-radius: 20px;
 }
 
 .company {
   color: $dark;
-  display: inline; // or inline-block if needed
+  display: inline;
   background-image: linear-gradient($accent, $accent);
   background-position: 0 90%;
   background-repeat: no-repeat;

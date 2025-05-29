@@ -10,7 +10,6 @@ import SkillsTab from '../../Components/ResumeTabs/SkillsTab';
 const Resume = () => {
   const [experiences, setExperiences] = useState(null);
   const [educations, setEducation] = useState(null);
-  // const [skills, setSkills] = useState(null);
   const [error] = useState(null);
   const [activeTab, setActiveTab] = useState(0); // 0: Experiences, 1: Education, 2: Skills
 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import styles from './Splash.module.scss';
 import { fetchLinkedInProfile } from '../../utils/fetchLinkedin';
+import { fetchGitHubRepos } from '../../utils/fetchRepos';
 
 const Splash = ({ title, subtitle }) => {
   const [progress, setProgress] = useState(0);
@@ -10,7 +11,7 @@ const Splash = ({ title, subtitle }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchLinkedInData(setError, setProgress);
+    fetchData(setError, setProgress);
   }, [setError]);
 
   useEffect(() => {
@@ -55,22 +56,23 @@ const Splash = ({ title, subtitle }) => {
 
 export default Splash;
 
-const fetchLinkedInData = async (setError, setProgress) => {
+const fetchData = async (setError, setProgress) => {
   try {
-    // time the fecth call
     const startTime = Date.now();
-    fetchLinkedInProfile();
+
+    // Wait for both API calls to complete
+    await Promise.all([fetchLinkedInProfile(), fetchGitHubRepos()]);
+
     const elapsedTime = Date.now() - startTime;
 
-    // progress bar shows for at least 2 seconds
     const remainingTime = Math.max(2000 - elapsedTime, 0);
 
     setTimeout(() => {
       setProgress(100);
     }, remainingTime);
   } catch (err) {
-    console.error('Error fetching LinkedIn profile:', err);
-    setError('Failed to fetch LinkedIn profile data.');
+    console.error('Error fetching data', err);
+    setError('Failed to fetch data.');
     setProgress(100);
   }
 };

@@ -1,7 +1,6 @@
 @import '../../styles/colors.module.scss';
 
 .projectsContainer {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,16 +8,79 @@
   color: $dark;
   text-align: center;
   padding: 20px;
+  margin-top: 70px;
 }
 
 .title {
   font-size: 3rem;
   margin-bottom: 20px;
+  background-image: linear-gradient($accent, $accent);
+  background-position: 0 90%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.5em;
 }
 
-.description {
-  font-size: 1.2rem;
+.projectTitle {
+  display: inline;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  background-image: linear-gradient($accent, $accent);
+  background-position: 0 90%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.25em;
+}
+
+.projectDescription {
+  margin-top: 10px;
   margin-bottom: 15px;
   line-height: 1.6;
   max-width: 800px;
+}
+.projectLanguages {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: $dark;
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // grid of 3 columns
+  gap: 2rem;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // 1 column on small screens
+  }
+}
+.projectLinks {
+  margin-top: 15px;
+}
+
+.projectItem {
+  position: relative;
+  padding: 1rem;
+  background-color: rgba($light, 0.7); // 70% opacity
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02); // slight zoom on hover
+    background-color: rgba($dark, 0.1); // 10% opacity
+  }
+
+  .projectLinks {
+    opacity: 0; // link is hidden by default
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+    cursor: pointer;
+  }
+
+  &:hover .projectLinks {
+    opacity: 1; // link is visible on hover
+    visibility: visible;
+  }
 }

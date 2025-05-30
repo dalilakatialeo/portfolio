@@ -3,7 +3,7 @@ import { Box, IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.scss';
-import navLinks from './navLinks'; // Import the JSON object
+import navLinks from './navLinks';
 
 const MobileNav = () => {
   const [anchorEl, setAnchorEl] = useState(null);

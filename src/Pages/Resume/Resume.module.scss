@@ -21,42 +21,46 @@
   background-size: 100% 0.5em;
 }
 
-.description {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  max-width: 800px;
+.resumeContainer .title {
+  font-family: 'Fascinate', sans-serif;
 }
 
-.experienceList {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 1rem;
-}
+// .description {
+//   font-size: 1.2rem;
+//   margin-bottom: 15px;
+//   line-height: 1.6;
+//   max-width: 800px;
+// }
 
-.experienceItem {
-  padding-left: 1rem;
-  background-color: rgba($light, 0.7); // 50% opacity
-  border-radius: 20px;
-}
+// .experienceList {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 2rem;
+//   padding: 1rem;
+// }
 
-.company {
-  color: $dark;
-  display: inline;
-  background-image: linear-gradient($accent, $accent);
-  background-position: 0 90%;
-  background-repeat: no-repeat;
-  background-size: 100% 0.25em;
-}
+// .experienceItem {
+//   padding-left: 1rem;
+//   background-color: rgba($light, 0.7); // 50% opacity
+//   border-radius: 20px;
+// }
 
-.dateLocation {
-  font-style: italic;
-  color: $dark;
-}
+// .company {
+//   color: $dark;
+//   display: inline;
+//   background-image: linear-gradient($accent, $accent);
+//   background-position: 0 90%;
+//   background-repeat: no-repeat;
+//   background-size: 100% 0.25em;
+// }
 
-.description {
-  margin-top: 0.5rem;
-  font-size: medium;
-  white-space: pre-line;
-}
+// .dateLocation {
+//   font-style: italic;
+//   color: $dark;
+// }
+
+// .description {
+//   margin-top: 0.5rem;
+//   font-size: medium;
+//   white-space: pre-line;
+// }

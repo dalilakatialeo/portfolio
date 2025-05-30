@@ -23,7 +23,7 @@ const Home = ({ title, subtitle }) => {
   return (
     <Box className={styles.homeContainer}>
       <Box className={styles.contentOverlay}>
-        <img src="/avatar.png" alt="Avatar" className={styles.avatar} />
+        <img src="/images/avatar.png" alt="Avatar" className={styles.avatar} />
         <Typography
           variant="h2"
           className={styles.title}
@@ -40,7 +40,7 @@ const Home = ({ title, subtitle }) => {
         </Typography>
 
         {progress < 100 ? (
-          // Show progress bar if progress is not complete
+          // show progress bar while loading
           <Box className={styles.progressContainer}>
             <Box
               className={styles.progressBar}

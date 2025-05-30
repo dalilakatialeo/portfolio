@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { LinkedIn, GitHub, Email } from '@mui/icons-material'; // Import Material-UI icons
+import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.scss';
 import navLinks from './navLinks';
@@ -9,6 +9,7 @@ const DesktopNav = () => {
   // Render the desktop navigation menu - iterating over navLinks
   return (
     <Box className={styles.desktopNav}>
+      <img src="/images/logo.png" alt="Logo" className={styles.logo} />
       {navLinks.map((link, index) => (
         <Link key={index} to={link.path} className={styles.navLink}>
           <Typography variant="button" sx={{ typography: 'link' }}>

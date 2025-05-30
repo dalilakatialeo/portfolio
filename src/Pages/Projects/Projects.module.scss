@@ -8,7 +8,7 @@
   align-items: center;
   color: $dark;
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   margin-top: 70px;
 }
 
@@ -20,6 +20,10 @@
   background-position: 0 90%;
   background-repeat: no-repeat;
   background-size: 100% 0.5em;
+}
+
+.projectsContainer .title {
+  font-family: 'Fascinate', sans-serif;
 }
 
 .projectTitle {
@@ -49,7 +53,8 @@
 .languagePill {
   padding: 0.3rem 0.6rem;
   border-radius: 20px; // rounded pill shape
-  font-size: 0.7rem;
+  border: 1px solid $dark;
+  font-size: 0.85rem;
   text-align: center;
   white-space: nowrap; // pills shouldnt wrap inside themselves
 }
@@ -65,24 +70,24 @@
     grid-template-columns: 1fr; // 1 column on small screens
   }
 }
-.projectLinks {
-  margin-top: 15px;
-}
 
 .projectItem {
   position: relative;
-  padding: 1rem;
+  padding: 2rem;
+  margin: 1rem;
+  min-width: 100px;
   background-color: rgba($light, 0.7); // 70% opacity
   border-radius: 20px;
   text-align: center;
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: scale(1.02); // slight zoom on hover
+    // transform: scale(1.02); // slight zoom on hover
     background-color: rgba($dark, 0.1); // 10% opacity
   }
 
   .projectLinks {
+    margin-top: 15px;
     opacity: 0; // link is hidden by default
     visibility: hidden;
     transition:
@@ -96,7 +101,8 @@
     visibility: visible;
   }
 }
-.githubButton {
+.projectsContainer .githubButton {
+  // increase specificity for the button
   background-color: $dark;
   color: $light;
   font-size: 0.8rem;
@@ -110,6 +116,7 @@
   &:hover {
     background-color: $accent;
     transform: scale(1.05);
+    border: 1px solid $dark;
     color: $dark;
   }
 }

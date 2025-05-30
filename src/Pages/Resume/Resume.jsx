@@ -40,7 +40,6 @@ const Resume = () => {
         onChange={handleTabChange}
         className={styles.tabs}
         // inline styles for tabs - doesnt work otherwise!
-        // TODO: try and move this to a stylesheet!
         sx={{
           '& .MuiTabs-indicator': {
             display: 'none',
@@ -52,9 +51,10 @@ const Resume = () => {
             borderRadius: '16px',
             padding: '2px 6px',
             margin: '10px 6px',
-            fontSize: '0.7rem',
+            fontSize: '0.9rem',
             fontWeight: 400,
             minHeight: '40px',
+            border: '1px solid #000211',
 
             '&.Mui-selected': {
               backgroundColor: '#b7e9bf',

@@ -67,7 +67,6 @@ const Projects = () => {
                 <Box className={styles.projectLinks}>
                   <Button
                     variant="contained"
-                    color="primary"
                     href={repo.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -81,8 +80,8 @@ const Projects = () => {
             ))}
           </Box>
         ) : (
-          <Typography variant="body2" className={styles.noProjects}>
-            No projects available.
+          <Typography variant="body2">
+            Oops, nothing to see here! Check back later for my projects.
           </Typography>
         )}
       </Box>

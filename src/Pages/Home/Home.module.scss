@@ -64,8 +64,8 @@
 }
 
 .enterButton {
-  background-color: $accent;
-  color: $dark;
+  background-color: $dark;
+  color: $light;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border: 1px solid $dark;
@@ -80,6 +80,8 @@
 
   &:hover {
     transform: scale(1.05);
+    background-color: $accent;
+    color: $dark;
   }
 
   &:active {

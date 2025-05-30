@@ -15,10 +15,6 @@ const Home = ({ title, subtitle }) => {
     fetchData(setError, setProgress);
   }, [setError]);
 
-  // useEffect(() => {
-  //   handleProgressCompletion(progress, navigate);
-  // }, [progress, navigate]);
-
   useEffect(() => {
     const cleanup = startProgressBar(setProgress);
     return cleanup;
@@ -27,6 +23,7 @@ const Home = ({ title, subtitle }) => {
   return (
     <Box className={styles.homeContainer}>
       <Box className={styles.contentOverlay}>
+        <img src="/avatar.png" alt="Avatar" className={styles.avatar} />
         <Typography
           variant="h2"
           className={styles.title}
@@ -97,9 +94,3 @@ const startProgressBar = (setProgress) => {
 
   return () => clearInterval(interval);
 };
-
-// const handleProgressCompletion = (progress, navigate) => {
-//   if (progress === 100) {
-//     navigate('/about');
-//   }
-// };

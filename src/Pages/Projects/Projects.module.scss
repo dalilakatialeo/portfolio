@@ -1,4 +1,5 @@
 @import '../../styles/colors.module.scss';
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
 
 .projectsContainer {
   display: flex;
@@ -12,6 +13,7 @@
 }
 
 .title {
+  font-family: 'Fascinate', sans-serif;
   font-size: 3rem;
   margin-bottom: 20px;
   background-image: linear-gradient($accent, $accent);

@@ -1,24 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
 @import '../../styles/colors.module.scss';
 
 .homeContainer {
+  position: relative;
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   color: $dark;
   text-align: center;
-  padding: 20px;
+}
+
+.contentOverlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
+  color: $dark;
   font-size: 3rem;
   margin-bottom: 20px;
+  font-family: 'Fascinate', sans-serif;
 }
 
-.description {
+.subtitle {
+  color: $dark;
+  margin-bottom: 40px;
+  font-weight: 200;
+}
+
+.progressContainer {
+  position: relative;
+  width: 50%;
+  height: 10px;
+  background-color: $dark;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+  border: 1px solid $dark;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: $accent;
+  transition: width 0.3s ease;
+}
+
+.enterButtonContainer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.enterButton {
+  background-color: $accent;
+  color: $dark;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid $dark;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95); // shrink!
+  }
+}
+
+.arrowIcon {
+  margin-left: 0.5rem;
   font-size: 1.2rem;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  max-width: 800px;
+  transition: transform 0.3s ease;
+
+  .enterButton:hover & {
+    transform: translateX(
+      5px
+    ); // move arrow to the right on hover - mimic a click effect
+  }
 }

@@ -1,20 +1,22 @@
 @import '../../styles/colors.module.scss';
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
 
 .aboutContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; // Center vertically
+  justify-content: center;
   color: $dark;
   text-align: center;
   padding: 20px;
-  margin-top: 0; // Remove margin-top to allow proper centering
-  height: 100vh; // Full viewport height to center vertically
+  margin-top: 0;
+  height: 100vh;
   overflow: hidden !important;
 }
 
 .title {
   font-size: 3rem;
+  font-family: 'Fascinate', sans-serif;
   margin-bottom: 40px !important;
   background-image: linear-gradient($accent, $accent);
   background-position: 0 90%;

@@ -4,7 +4,7 @@ import './App.css';
 import About from './Pages/About/About';
 import Projects from './Pages/Projects/Projects';
 import Resume from './Pages/Resume/Resume';
-import Splash from './Components/Splash/Splash';
+import Home from './Pages/Home/Home';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
           <Route
             path="/"
             element={
-              <Splash title="Dalila Katia Leo" subtitle="Full-Stack Engineer" />
+              <Home title="Dalila Katia Leo" subtitle="Full-Stack Engineer" />
             }
           />
           <Route path="/about" element={<About />} />

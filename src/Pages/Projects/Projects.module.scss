@@ -31,18 +31,29 @@
 }
 
 .projectDescription {
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin: 20px !important;
   line-height: 1.6;
   max-width: 800px;
 }
+
 .projectLanguages {
+  display: flex;
+  flex-wrap: wrap; // pills can wrap
+  gap: 0.5rem; // space between pills
   margin-top: 10px;
-  font-size: 0.8rem;
-  color: $dark;
+  justify-content: center;
+}
+
+.languagePill {
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px; // rounded pill shape
+  font-size: 0.7rem;
+  text-align: center;
+  white-space: nowrap; // pills shouldnt wrap inside themselves
 }
 
 .projectList {
+  max-width: 60vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr); // grid of 3 columns
   gap: 2rem;
@@ -63,7 +74,6 @@
   border-radius: 20px;
   text-align: center;
   transition: transform 0.3s ease;
-  cursor: pointer;
 
   &:hover {
     transform: scale(1.02); // slight zoom on hover
@@ -82,5 +92,22 @@
   &:hover .projectLinks {
     opacity: 1; // link is visible on hover
     visibility: visible;
+  }
+}
+.githubButton {
+  background-color: $dark;
+  color: $light;
+  font-size: 0.8rem;
+  text-transform: none;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    background-color: $accent;
+    transform: scale(1.05);
+    color: $dark;
   }
 }

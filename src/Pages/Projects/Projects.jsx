@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import styles from './Projects.module.scss';
 import NavBar from '../../Components/NavBar/NavBar';
 import Footer from '../../Components/Footer/Footer';
-import { SpaceBar } from '@mui/icons-material';
+import { languageColours } from '../../styles/languageColours';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Projects = () => {
   const [repos, setRepos] = React.useState(null);
-  const [error, setError] = React.useState(null);
-  const [languages, setLanguages] = React.useState(null);
 
   useEffect(() => {
     const cachedData = localStorage.getItem('github-cache');
@@ -26,6 +25,7 @@ const Projects = () => {
 
   useEffect(() => {
     document.title = "Projects - Dalila Katia Leo's Portfolio";
+    console.log(languageColours);
   }, []);
 
   return (
@@ -43,22 +43,39 @@ const Projects = () => {
                   {repo.name}
                 </Typography>
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   className={styles.projectDescription}
                 >
-                  {repo.description || 'No description available.'}
+                  {repo.description || ''}
                 </Typography>
-                <Typography className={styles.projectLanguages}>
-                  {repo.languages || ''}
-                </Typography>
+                <Box className={styles.projectLanguages}>
+                  {repo.languages
+                    ? repo.languages.split(', ').map((language, langIndex) => (
+                        <Box
+                          key={langIndex}
+                          className={styles.languagePill}
+                          // Inline style to set the background color based on the language
+                          style={{
+                            backgroundColor: `${languageColours[language]}80`, // 50% opacity (using hex suffix)
+                          }}
+                        >
+                          {language}
+                        </Box>
+                      ))
+                    : ''}
+                </Box>
                 <Box className={styles.projectLinks}>
-                  <a
+                  <Button
+                    variant="contained"
+                    color="primary"
                     href={repo.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className={styles.githubButton}
+                    startIcon={<GitHubIcon />}
                   >
                     View on GitHub
-                  </a>
+                  </Button>
                 </Box>
               </Box>
             ))}

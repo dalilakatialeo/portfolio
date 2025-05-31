@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import styles from './Tab.module.scss';
+import NoResults from '../NoResults/NoResults';
 
 const SkillsTab = ({ experiences }) => {
   const skills = extractUniqueSkills(experiences);
@@ -16,9 +17,7 @@ const SkillsTab = ({ experiences }) => {
           ))}
         </ul>
       ) : (
-        <Typography variant="body1" className={styles.noSkills}>
-          No skills available.
-        </Typography>
+        <NoResults data={'skill'} />
       )}
     </Box>
   );

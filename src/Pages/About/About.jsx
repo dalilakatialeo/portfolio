@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import styles from './About.module.scss';
 import NavBar from '../../Components/NavBar/NavBar';
 import Footer from '../../Components/Footer/Footer';
 
 const About = () => {
-  const [about, setAbout] = React.useState(null);
-  const [error] = React.useState(null);
+  const [about, setAbout] = useState(null);
 
   useEffect(() => {
     const cachedData = localStorage.getItem('linkedin-cache');
@@ -25,24 +24,29 @@ const About = () => {
         About Me
       </Typography>
 
-      {error ? (
-        <Typography variant="body1" className={styles.error}>
-          {error}
-        </Typography>
-      ) : about ? (
+      {about ? (
         // split on new line so we render separate paragraphs
         <Typography variant="body1" className={styles.description}>
           {about.split('\n').map((paragraph, index) => (
-            <React.Fragment key={index}>
+            <Box key={index}>
               {paragraph}
               {index < about.split('\n').length - 1 && <br />}
-            </React.Fragment>
+            </Box>
           ))}
         </Typography>
       ) : (
-        <Typography variant="body1" className={styles.description}>
-          Loading about data...
-        </Typography>
+        <Box>
+          <img
+            src="/images/avatar-uhoh.png"
+            alt="Avatar"
+            className={styles.avatar}
+          />
+          <Typography variant="body1" className={styles.noAbout}>
+            <h3>Uh oh!</h3>
+            <p>I could not retrieve any information.</p>
+            <p>Have you tried turning me off and on again..? 😅 </p>
+          </Typography>
+        </Box>
       )}
       <Footer />
     </Box>

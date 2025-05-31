@@ -6,6 +6,7 @@ import Footer from '../../Components/Footer/Footer';
 import SearchBox from '../../Components/SearchBox/SearchBox';
 import { languageColours } from '../../styles/languageColours';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import NoResults from '../../Components/NoResults/NoResults';
 
 const Projects = () => {
   const [repos, setRepos] = useState(null);
@@ -24,7 +25,7 @@ const Projects = () => {
     });
 
     setRepos(sortedRepos || []);
-    setFilteredRepos(sortedRepos || []); // Initialize filteredRepos with all repos
+    setFilteredRepos(sortedRepos || []); // Initialise filteredRepos with all repos
   }, []);
 
   useEffect(() => {
@@ -89,12 +90,9 @@ const Projects = () => {
             ))}
           </Box>
         ) : (
-          <Typography variant="body2">
-            Oops, nothing to see here! Check back later for my projects.
-          </Typography>
+          <NoResults data={'project'} />
         )}
       </Box>
-
       <Footer />
     </Box>
   );

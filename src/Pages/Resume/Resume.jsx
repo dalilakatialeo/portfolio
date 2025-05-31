@@ -3,20 +3,20 @@ import { Box, Typography, Tabs, Tab } from '@mui/material';
 import styles from './Resume.module.scss';
 import NavBar from '../../Components/NavBar/NavBar';
 import Footer from '../../Components/Footer/Footer';
-import ExperienceTab from '../../Components/ResumeTabs/ExperienceTab';
+import EmploymentTab from '../../Components/ResumeTabs/EmploymentTab';
 import EducationTab from '../../Components/ResumeTabs/EducationTab';
 import SkillsTab from '../../Components/ResumeTabs/SkillsTab';
 
 const Resume = () => {
-  const [experiences, setExperiences] = useState(null);
+  const [employments, setEmployments] = useState(null);
   const [educations, setEducation] = useState(null);
   const [error] = useState(null);
-  const [activeTab, setActiveTab] = useState(0); // 0: Experiences, 1: Education, 2: Skills
+  const [activeTab, setActiveTab] = useState(0); // 0: Employments, 1: Education, 2: Skills
 
   useEffect(() => {
     const cachedData = localStorage.getItem('linkedin-cache');
     const parsedData = JSON.parse(cachedData)?.data || {};
-    setExperiences(parsedData.experiences || []);
+    setEmployments(parsedData.experiences || []);
     setEducation(parsedData.educations || []);
   }, []);
 
@@ -63,7 +63,7 @@ const Resume = () => {
           },
         }}
       >
-        <Tab label="Experiences" />
+        <Tab label="Employment" />
         <Tab label="Education" />
         <Tab label="Skills" />
       </Tabs>
@@ -74,9 +74,9 @@ const Resume = () => {
         </Typography>
       ) : (
         <Box className={styles.tabContent}>
-          {activeTab === 0 && <ExperienceTab experiences={experiences} />}
+          {activeTab === 0 && <EmploymentTab employments={employments} />}
           {activeTab === 1 && <EducationTab educations={educations} />}
-          {activeTab === 2 && <SkillsTab experiences={experiences} />}
+          {activeTab === 2 && <SkillsTab experiences={employments} />}
         </Box>
       )}
       <Footer />

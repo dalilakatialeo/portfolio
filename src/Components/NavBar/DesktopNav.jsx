@@ -1,15 +1,17 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './NavBar.module.scss';
-import navLinks from './navLinks';
+import navLinks from '../../helpers/navLinks';
 
 const DesktopNav = () => {
   // Render the desktop navigation menu - iterating over navLinks
   return (
     <Box className={styles.desktopNav}>
-      <img src="/images/logo.png" alt="Logo" className={styles.logo} />
+      <Link to="/">
+        <img src="/images/logo.png" alt="Logo" className={styles.logo} />
+      </Link>
       {navLinks.map((link, index) => (
         <NavLink
           key={index}

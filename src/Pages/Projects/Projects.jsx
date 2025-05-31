@@ -25,7 +25,6 @@ const Projects = () => {
 
   useEffect(() => {
     document.title = "Projects - Dalila Katia Leo's Portfolio";
-    console.log(languageColours);
   }, []);
 
   return (
@@ -43,7 +42,7 @@ const Projects = () => {
                   {repo.name}
                 </Typography>
                 <Typography
-                  variant="body2"
+                  variant="body1"
                   className={styles.projectDescription}
                 >
                   {repo.description || ''}

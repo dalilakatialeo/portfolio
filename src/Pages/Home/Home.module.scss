@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
 @import '../../styles/colors.module.scss';
 
 .homeContainer {
@@ -19,6 +18,7 @@
   justify-content: center;
   text-align: center;
 }
+
 .avatar {
   width: 25vw;
   height: 25vw;
@@ -98,5 +98,25 @@
     transform: translateX(
       5px
     ); // move arrow to the right on hover - mimic a click effect
+  }
+}
+
+@media (max-width: 768px) {
+  // media query for smaller screens
+  .avatar {
+    width: 60vw;
+    height: 60vw;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .title {
+    font-size: 2.2rem !important;
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    font-size: 1.5rem !important;
+    margin-bottom: 30px;
   }
 }

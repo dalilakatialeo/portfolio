@@ -16,6 +16,7 @@ const Home = ({ title, subtitle }) => {
   }, [setError]);
 
   useEffect(() => {
+    // clear the progress bar when the component unmounts
     const cleanup = startProgressBar(setProgress);
     return cleanup;
   }, []);
@@ -48,7 +49,7 @@ const Home = ({ title, subtitle }) => {
             />
           </Box>
         ) : (
-          // Show "Enter" button when progress is complete
+          // once loaded, show the enter button
           <Box className={styles.enterButtonContainer}>
             <button
               className={styles.enterButton}
@@ -89,7 +90,7 @@ const fetchData = async (setError, setProgress) => {
 // progress bar
 const startProgressBar = (setProgress) => {
   const interval = setInterval(() => {
-    setProgress((prev) => Math.min(prev + 5, 100));
+    setProgress((prev) => Math.min(prev + 5, 100)); // increment progress by 5% every 200ms
   }, 200);
 
   return () => clearInterval(interval);

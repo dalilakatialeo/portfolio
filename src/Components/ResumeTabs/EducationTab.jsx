@@ -17,7 +17,7 @@ const EducationTab = ({ educations }) => {
               ? ` — ${extractYears(education.date_range)}`
               : ''}
           </Typography>
-          <Typography variant="body2" className={styles.description}>
+          <Typography variant="body1" className={styles.description}>
             {education.description}
           </Typography>
         </Box>

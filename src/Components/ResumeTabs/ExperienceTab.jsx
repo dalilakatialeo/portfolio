@@ -13,7 +13,7 @@ const ExperienceTab = ({ experiences }) => {
           <Typography variant="subtitle2" className={styles.dateLocation}>
             {experience.date_range} — {experience.location}
           </Typography>
-          <Typography variant="body2" className={styles.description}>
+          <Typography variant="body1" className={styles.description}>
             {experience.description}
           </Typography>
         </Box>

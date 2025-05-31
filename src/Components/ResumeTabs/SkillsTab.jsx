@@ -16,7 +16,7 @@ const SkillsTab = ({ experiences }) => {
           ))}
         </ul>
       ) : (
-        <Typography variant="body2" className={styles.noSkills}>
+        <Typography variant="body1" className={styles.noSkills}>
           No skills available.
         </Typography>
       )}
@@ -39,7 +39,7 @@ const extractUniqueSkills = (experiences) => {
     return acc;
   }, []);
 
-  // remove duplicates
+  // remove duplicates, use a Set
   const uniqueSkills = [...new Set(allSkills)];
   return uniqueSkills;
 };

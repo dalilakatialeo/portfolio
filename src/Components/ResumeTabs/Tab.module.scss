@@ -5,13 +5,22 @@
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
-  max-width: 50vw;
+  max-width: 60vw;
+}
+
+//media query for smaller screens
+@media (max-width: 768px) {
+  .list {
+    max-width: 90vw;
+  }
 }
 
 .item {
   padding-left: 1rem;
   background-color: rgba($light, 0.7); // 50% opacity
   border-radius: 20px;
+  padding: 10px;
+  border: 1px solid $dark;
 }
 
 .company {
@@ -29,6 +38,6 @@
 }
 
 .description {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   white-space: pre-line;
 }

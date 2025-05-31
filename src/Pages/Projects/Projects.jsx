@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import styles from './Projects.module.scss';
 import NavBar from '../../Components/NavBar/NavBar';
 import Footer from '../../Components/Footer/Footer';
+import SearchBox from '../../Components/SearchBox/SearchBox';
 import { languageColours } from '../../styles/languageColours';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Projects = () => {
-  const [repos, setRepos] = React.useState(null);
+  const [repos, setRepos] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredRepos, setFilteredRepos] = useState([]);
 
   useEffect(() => {
     const cachedData = localStorage.getItem('github-cache');
@@ -21,6 +24,7 @@ const Projects = () => {
     });
 
     setRepos(sortedRepos || []);
+    setFilteredRepos(sortedRepos || []); // Initialize filteredRepos with all repos
   }, []);
 
   useEffect(() => {
@@ -33,10 +37,16 @@ const Projects = () => {
       <Typography variant="h2" className={styles.title}>
         Projects
       </Typography>
+      <SearchBox
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        repos={repos}
+        setFilteredRepos={setFilteredRepos}
+      />
       <Box>
-        {repos && repos.length > 0 ? (
+        {filteredRepos && filteredRepos.length > 0 ? (
           <Box className={styles.projectList}>
-            {repos.map((repo, index) => (
+            {filteredRepos.map((repo, index) => (
               <Box key={index} className={styles.projectItem}>
                 <Typography variant="h5" className={styles.projectTitle}>
                   {repo.name}

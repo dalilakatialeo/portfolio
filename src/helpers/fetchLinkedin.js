@@ -1,4 +1,4 @@
-import { checkCache, setCache } from './cacheUtils';
+import { checkCache, setCache } from '../utils/cacheUtils';
 
 const linkedInCacheKey = process.env.REACT_APP_LINKEDIN_CACHE_KEY;
 const linkedInCacheExpirationKey =
@@ -37,7 +37,6 @@ export const fetchLinkedInProfile = async () => {
     }
 
     const data = await response.json();
-    console.log('LinkedIn profile data:', data);
 
     // Store data in cache
     setCache(

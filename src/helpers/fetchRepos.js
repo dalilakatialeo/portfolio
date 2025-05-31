@@ -1,4 +1,4 @@
-import { checkCache, setCache } from './cacheUtils';
+import { checkCache, setCache } from '../utils/cacheUtils';
 
 const gitHubCacheKey = process.env.REACT_APP_GITHUB_CACHE_KEY;
 const gitHubCacheExpirationKey =

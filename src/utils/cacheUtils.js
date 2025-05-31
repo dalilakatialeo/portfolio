@@ -1,5 +1,4 @@
 const checkCache = (cacheKey, cacheExp) => {
-  console.log('Checking cache for:', cacheKey);
   const cachedData = localStorage.getItem(cacheKey);
   const cacheExpiration = localStorage.getItem(cacheExp);
 
@@ -9,11 +8,9 @@ const checkCache = (cacheKey, cacheExp) => {
     Date.now() < parseInt(cacheExpiration, 10)
   ) {
     // we have valid cache, return it
-    console.log('Cache hit for:', cacheKey);
     return JSON.parse(cachedData);
   }
   // no valid cache, return null
-  console.log('Cache miss for:', cacheKey);
   return null;
 };
 

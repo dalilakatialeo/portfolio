@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import styles from './Home.module.scss';
-import { fetchLinkedInProfile } from '../../utils/fetchLinkedin';
-import { fetchGitHubRepos } from '../../utils/fetchRepos';
+import { fetchLinkedInProfile } from '../../helpers/fetchLinkedin';
+import { fetchGitHubRepos } from '../../helpers/fetchRepos';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Home = ({ title, subtitle }) => {

@@ -1,7 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import styles from './NoResults.module.scss';
 
-const NoResults = ({ data }) => {
+const NoResults = ({ data = '' }) => {
+  // Default to an empty string if no data prop is not provided
   return (
     <Box>
       <img

@@ -3,6 +3,7 @@ import { Box, Typography } from '@mui/material';
 import styles from './About.module.scss';
 import NavBar from '../../Components/NavBar/NavBar';
 import Footer from '../../Components/Footer/Footer';
+import NoResults from '../../Components/NoResults/NoResults';
 
 const About = () => {
   const [about, setAbout] = useState(null);
@@ -35,18 +36,7 @@ const About = () => {
           ))}
         </Typography>
       ) : (
-        <Box>
-          <img
-            src="/images/avatar-uhoh.png"
-            alt="Avatar"
-            className={styles.avatar}
-          />
-          <Typography variant="body1" className={styles.noAbout}>
-            <h3>Uh oh!</h3>
-            <p>I could not retrieve any information.</p>
-            <p>Have you tried turning me off and on again..? 😅 </p>
-          </Typography>
-        </Box>
+        <NoResults />
       )}
       <Footer />
     </Box>

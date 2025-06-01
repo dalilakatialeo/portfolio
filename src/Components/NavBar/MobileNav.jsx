@@ -21,7 +21,11 @@ const MobileNav = () => {
   // Render the mobile navigation menu - iterating over navLinks
   return (
     <Box className={styles.mobileNavContainer}>
-      <img src="/images/logo.png" alt="Logo" className={styles.logo} />
+      <img
+        src={`${process.env.PUBLIC_URL}/images/logo.png`}
+        alt="Logo"
+        className={styles.logo}
+      />
       <Box className={styles.mobileNav}>
         <IconButton color="inherit" onClick={handleMenuOpen}>
           <MenuIcon className={styles.menuIcon} />

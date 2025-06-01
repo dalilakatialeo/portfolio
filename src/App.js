@@ -9,7 +9,7 @@ import Home from './Pages/Home/Home';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/portfolio">
         <Routes>
           <Route
             path="/"

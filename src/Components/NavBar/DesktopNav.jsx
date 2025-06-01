@@ -10,7 +10,11 @@ const DesktopNav = () => {
   return (
     <Box className={styles.desktopNav}>
       <Link to="/">
-        <img src="/images/logo.png" alt="Logo" className={styles.logo} />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/logo.png`}
+          alt="Logo"
+          className={styles.logo}
+        />
       </Link>
       {navLinks.map((link, index) => (
         <NavLink

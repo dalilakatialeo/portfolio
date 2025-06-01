@@ -24,7 +24,11 @@ const Home = ({ title, subtitle }) => {
   return (
     <Box className={styles.homeContainer}>
       <Box className={styles.contentOverlay}>
-        <img src="/images/avatar.png" alt="Avatar" className={styles.avatar} />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/avatar.png`}
+          alt="Avatar"
+          className={styles.avatar}
+        />
         <Typography
           variant="h2"
           className={styles.title}

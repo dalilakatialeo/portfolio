@@ -27,7 +27,11 @@ const About = () => {
 
       {about ? (
         // split on new line so we render separate paragraphs
-        <Typography variant="body1" className={styles.description}>
+        <Typography
+          variant="body1"
+          className={styles.description}
+          component={'div'}
+        >
           {about.split('\n').map((paragraph, index) => (
             <Box key={index}>
               {paragraph}

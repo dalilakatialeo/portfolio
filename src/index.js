@@ -4,6 +4,8 @@ import './index.scss';
 import App from './App';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
+import { BrowserRouter } from 'react-router-dom';
+
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

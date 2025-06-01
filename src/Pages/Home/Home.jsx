@@ -57,7 +57,7 @@ const Home = ({ title, subtitle }) => {
           <Box className={styles.enterButtonContainer}>
             <button
               className={styles.enterButton}
-              onClick={() => navigate('/about')}
+              onClick={() => navigate('/about/')}
             >
               ENTER <ArrowForwardIcon className={styles.arrowIcon} />
             </button>

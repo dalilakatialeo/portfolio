@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import NoResults from '../../Components/NoResults/NoResults';
 import NavBar from '../../Components/NavBar/NavBar';
 import styles from './NotFound.module.scss';

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, IconButton, Menu, MenuItem } from '@mui/material';
+import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.scss';
@@ -41,6 +42,34 @@ const MobileNav = () => {
               </Link>
             </MenuItem>
           ))}
+          <MenuItem onClick={handleMenuClose} className={styles.mobileNavItem}>
+            <a
+              href="https://www.linkedin.com/in/dalila-k-leo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.mobileNavLink}
+            >
+              <LinkedIn className={styles.icon} />
+            </a>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose} className={styles.mobileNavItem}>
+            <a
+              href="https://github.com/dalilakatialeo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.mobileNavLink}
+            >
+              <GitHub className={styles.icon} />
+            </a>
+          </MenuItem>
+          <MenuItem onClick={handleMenuClose} className={styles.mobileNavItem}>
+            <a
+              href="mailto:dalilakatialeo@gmail.com"
+              className={styles.mobileNavLink}
+            >
+              <Email className={styles.icon} />
+            </a>
+          </MenuItem>
         </Menu>
       </Box>
     </Box>

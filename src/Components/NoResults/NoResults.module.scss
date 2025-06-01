@@ -12,3 +12,13 @@
   max-height: 400px;
   margin: 20px;
 }
+
+@media (max-width: 1024px) {
+  .avatar {
+    width: 30vw;
+    height: 30vw;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 20px;
+  }
+}

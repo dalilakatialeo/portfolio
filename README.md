@@ -8,12 +8,12 @@ The project showcases my personal projects, technical skills, and experience and
 
 ## 📦 What's in the box
 
-- Interactive React UI built with Material UI reusable components  
+- Interactive React UI built with Material UI reusable components
 - Responsive design for desktop and mobile
 - Personal and professional information pulled from [Fresh LinkedIn Profile Data API](https://rapidapi.com/freshdata-freshdata-default/api/fresh-linkedin-profile-data/)
 - Project showcase with dynamic data pulled from [GitHubAPI](https://docs.github.com/en/rest?apiVersion=2022-11-28)
 - Social links for direct contact
-- Accessible layout and semantics  
+- Accessible layout and semantics
 
 ---
 
@@ -47,6 +47,7 @@ You guessed it!
 ```bash
 npm start
 ```
+
 The app will be served at http://localhost:3000 in your browser
 
 ### Project structure 🏠
@@ -75,7 +76,7 @@ Again, should you ever be so inclined, this is how you can contribute to this pr
 - Push to your branch: `git push origin my-feature`
 - Open a Pull Request
 
-*Please note, linting rules are enforced on commit with Husky*
+_Please note, linting rules are enforced on commit with Husky_
 
 ## Houston, we have a problem 😬
 
@@ -86,6 +87,5 @@ If you found a bug that requires attention, please open an issue [here](https://
 - Screenshots (if applicable)
 
 ## Licence
+
 This project is licenced under the [MIT License](https://opensource.org/license/mit/). Do with it as you will! 😄
-
-

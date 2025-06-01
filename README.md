@@ -19,7 +19,7 @@ The project showcases my personal projects, technical skills, and experience and
 
 ## 🌐 View it live!
 
-The project is hosted at .........
+The project is hosted at https://dalilakatialeo.github.io/portfolio/
 
 ---
 

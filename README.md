@@ -1,4 +1,4 @@
-# 👋 Welcome to my newly updated Portfolio project! 👋
+# 👋 Welcome to my Portfolio project! 👋
 
 This is a **React-based frontend application** developed as part of the **IFQ666 Web and Mobile Development** assignment at **Queensland University of Technology (QUT)**.
 

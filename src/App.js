@@ -10,7 +10,7 @@ import NotFound from './Pages/NotFound/NotFound';
 function App() {
   return (
     <div className="App">
-      <Router basename="/portfolio/">
+      <Router basename="/portfolio">
         <Routes>
           <Route
             path="/"
@@ -18,10 +18,10 @@ function App() {
               <Home title="Dalila Katia Leo" subtitle="Full-Stack Engineer" />
             }
           />
-          <Route path="about/" element={<About />} />
-          <Route path="resume/" element={<Resume />} />
-          <Route path="projects/" element={<Projects />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>

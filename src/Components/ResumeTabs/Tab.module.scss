@@ -1,0 +1,43 @@
+@import '../../styles/colors.module.scss';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 60vw;
+}
+
+//media query for smaller screens
+@media (max-width: 768px) {
+  .list {
+    max-width: 90vw;
+  }
+}
+
+.item {
+  padding-left: 1rem;
+  background-color: rgba($light, 0.7); // 50% opacity
+  border-radius: 20px;
+  padding: 10px;
+  border: 1px solid $dark;
+}
+
+.company {
+  color: $dark;
+  display: inline;
+  background-image: linear-gradient($accent, $accent);
+  background-position: 0 90%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.25em;
+}
+
+.dateLocation {
+  font-style: italic;
+  color: #555;
+}
+
+.description {
+  margin-top: 1rem;
+  white-space: pre-line;
+}

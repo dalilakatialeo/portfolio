@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# 👋 Welcome to my Portfolio project! 👋
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a **React-based frontend application** developed as part of the **IFQ666 Web and Mobile Development** assignment at **Queensland University of Technology (QUT)**.
 
-## Available Scripts
+The project showcases my personal projects, technical skills, and experience and is designed to be responsive and accessible across modern web and mobile browsers.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📦 What's in the box
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Interactive React UI built with Material UI reusable components  
+- Responsive design for desktop and mobile
+- Personal and professional information pulled from [Fresh LinkedIn Profile Data API](https://rapidapi.com/freshdata-freshdata-default/api/fresh-linkedin-profile-data/)
+- Project showcase with dynamic data pulled from [GitHubAPI](https://docs.github.com/en/rest?apiVersion=2022-11-28)
+- Social links for direct contact
+- Accessible layout and semantics  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🌐 View it live!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project is hosted at .........
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 👩‍💻 Should you ever need or want to contribute, follow these steps
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites 🔡
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Make sure you have the following installed:
 
-### `npm run eject`
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- npm (comes with Node.js) or [Yarn](https://yarnpkg.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/dalilakatialeo/portfolio.git
+cd portfolio
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Running in Dev Mode 🏃
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You guessed it!
 
-## Learn More
+```bash
+npm start
+```
+The app will be served at http://localhost:3000 in your browser
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Project structure 🏠
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A tidy project is a good project! 🧹
+This is where everything should live
 
-### Code Splitting
+```bash
+src/
+├── components/        # Reusable React components
+├── helpers/           # Helper functions and snippets
+├── pages/             # Page components (e.g., Home, Projects)
+├── styles/            # CSS or SCSS files
+├── utils/             # Utility functions
+├── App.js             # App entry point
+└── index.js           # ReactDOM render logic
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## How to Contribute 🤙
 
-### Analyzing the Bundle Size
+Again, should you ever be so inclined, this is how you can contribute to this project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Fork the repository
+- Create a feature branch: `git checkout -b my-feature`
+- Commit your changes: `git commit -m 'feat: Add new feature'`
+- Push to your branch: `git push origin my-feature`
+- Open a Pull Request
 
-### Making a Progressive Web App
+*Please note, linting rules are enforced on commit with Husky*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Houston, we have a problem 😬
 
-### Advanced Configuration
+If you found a bug that requires attention, please open an issue [here](https://github.com/dalilakatialeo/portfolio/issues) and include:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- A clear description of the problem
+- Steps to reproduce
+- Screenshots (if applicable)
 
-### Deployment
+## Licence
+This project is licenced under the [MIT License](https://opensource.org/license/mit/). Do with it as you will! 😄
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

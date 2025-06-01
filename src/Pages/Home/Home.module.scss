@@ -1,0 +1,122 @@
+@import '../../styles/colors.module.scss';
+
+.homeContainer {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: $dark;
+  text-align: center;
+}
+
+.contentOverlay {
+  display: flex;
+  flex-direction: column; // stack elements
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.avatar {
+  width: 25vw;
+  height: 25vw;
+  max-width: 400px;
+  max-height: 400px;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: $dark;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: 'Fascinate', sans-serif;
+}
+
+.subtitle {
+  color: $dark;
+  margin-bottom: 40px;
+  font-weight: 200;
+}
+
+.progressContainer {
+  position: relative;
+  width: 50%;
+  height: 10px;
+  background-color: $dark;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+  border: 1px solid $dark;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: $accent;
+  transition: width 0.3s ease;
+}
+
+.enterButtonContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.enterButton {
+  background-color: $dark;
+  color: $light;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid $dark;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: $accent;
+    color: $dark;
+  }
+
+  &:active {
+    transform: scale(0.95); // shrink!
+  }
+}
+
+.arrowIcon {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+
+  .enterButton:hover & {
+    transform: translateX(
+      5px
+    ); // move arrow to the right on hover - mimic a click effect
+  }
+}
+
+@media (max-width: 768px) {
+  // media query for smaller screens
+  .avatar {
+    width: 60vw;
+    height: 60vw;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .title {
+    font-size: 2.2rem !important;
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    font-size: 1.5rem !important;
+    margin-bottom: 30px;
+  }
+}

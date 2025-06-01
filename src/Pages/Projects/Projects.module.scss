@@ -1,0 +1,120 @@
+@import '../../styles/colors.module.scss';
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $dark;
+  text-align: center;
+  padding: 25px;
+  margin-top: 70px;
+}
+
+.projectsContainer .title {
+  font-family: 'Fascinate', sans-serif; // increase specificity
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background-image: linear-gradient($accent, $accent);
+  background-position: 0 90%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.5em;
+}
+
+.projectList {
+  max-width: 70vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // grid of 3 columns
+  gap: 2rem;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // 1 column on small screens
+  }
+}
+
+.projectItem {
+  position: relative;
+  padding: 1rem;
+  margin: 0.5rem;
+  min-width: 100px;
+  background-color: rgba($light, 0.7); // 70% opacity
+  border-radius: 20px;
+  border: 1px solid $dark;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    background-color: rgba($dark, 0.1); // 10% opacity
+  }
+
+  .projectTitle {
+    display: inline;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    background-image: linear-gradient($accent, $accent);
+    background-position: 0 90%;
+    background-repeat: no-repeat;
+    background-size: 100% 0.25em;
+  }
+
+  .projectDescription {
+    margin: 20px !important;
+    line-height: 1.6;
+    max-width: 800px;
+  }
+
+  .projectLanguages {
+    display: flex;
+    flex-wrap: wrap; // pills can wrap
+    gap: 0.5rem; // space between pills
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .languagePill {
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px; // rounded pill shape
+    border: 1px solid $dark;
+    font-size: 0.85rem;
+    text-align: center;
+    white-space: nowrap; // pills shouldnt wrap inside themselves
+  }
+
+  .projectLinks {
+    margin-top: 15px;
+    opacity: 0; // link is hidden by default
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+    cursor: pointer;
+  }
+
+  &:hover .projectLinks {
+    opacity: 1; // link is visible on hover
+    visibility: visible;
+  }
+}
+.projectsContainer .githubButton {
+  // increase specificity for the button
+  background-color: $dark;
+  color: $light;
+  font-size: 0.9rem;
+  text-transform: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    background-color: $accent;
+    transform: scale(1.05);
+    border: 1px solid $dark;
+    color: $dark;
+  }
+}

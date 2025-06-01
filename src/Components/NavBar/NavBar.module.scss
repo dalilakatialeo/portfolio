@@ -1,0 +1,114 @@
+@import '../../styles/colors.module.scss';
+
+.toolbar {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.navBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark !important;
+  z-index: 1201;
+  padding: 0 20px;
+  box-shadow:
+    0px 2px 3px 0px $accent,
+    0px 1px 1px 0px $accent !important;
+}
+
+.logo {
+  width: auto;
+  height: 50px;
+  max-height: 60px;
+}
+
+.desktopNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.iconLinks {
+  display: flex;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.iconLink {
+  color: $light;
+  font-size: 16px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.navLink {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: small;
+  transition: color 0.3s ease;
+  color: $light;
+  &:hover,
+  &:active,
+  &.active {
+    color: $accent !important;
+    text-decoration: underline;
+    text-underline-offset: 8px; // space between text and underline
+  }
+}
+
+.mobileNav {
+  display: none; // Hidden by default
+}
+
+@media (max-width: 768px) {
+  // media query for mobile devices
+
+  .toolbar {
+    padding-top: 0px;
+    display: inline !important;
+    align-items: center;
+  }
+
+  .mobileNav {
+    display: flex;
+  }
+
+  .mobileNavContainer {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .mobileNavItem {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: $light;
+    font-size: medium;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
+
+  .mobileNavLink {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: medium;
+    color: $dark;
+    &:hover,
+    &:active {
+      font-weight: 500;
+    }
+  }
+}

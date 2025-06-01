@@ -7,3 +7,10 @@
   padding: 10px;
   margin-top: 10px;
 }
+
+//media queries
+@media (max-width: 768px) {
+  .searchBox {
+    width: 90%;
+  }
+}

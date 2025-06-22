@@ -9,7 +9,6 @@ const gitHubCacheDuration = parseInt(
 ); // Convert to number
 
 const gitHubUrl = process.env.REACT_APP_GITHUB_API_URL;
-const gitHubApiKey = process.env.REACT_APP_GITHUB_TOKEN;
 
 export const fetchGitHubRepos = async () => {
   try {
@@ -22,7 +21,6 @@ export const fetchGitHubRepos = async () => {
     const requestOptions = {
       method: 'GET',
       headers: {
-        Authorization: `token ${gitHubApiKey}`,
         Accept: 'application/vnd.github+json',
       },
     };
